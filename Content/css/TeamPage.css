@@ -1,0 +1,117 @@
+body {
+    background: url('../images/bg_image.jpg') transparent no-repeat center center;
+    background-size: cover;
+}
+section{
+    margin-top: -760px; 
+}
+.header-team-page{
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    margin-right: -4px;
+    margin-bottom: 6rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+}
+.header-team-page::after{
+    content: "";
+    width: 14rem;
+    height: 1rem;
+    background-color: firebrick;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+}
+.card-wrapper{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.card {
+    width: 35rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 4rem;
+    box-shadow: 1rem 1rem 3rem rgba(0,0,0,0.3);
+}
+.profile{
+    width: 22rem;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -9rem;
+    z-index: 999;
+    border: 0.2rem solid #333;
+}
+.card h3{
+    font-size: 2rem;
+    color:  #ff9500;
+    margin: 1.5rem 0;
+}
+.profession{
+    color: blue;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+    font-style: italic;
+}
+.about {
+    font-size: 2rem;
+    margin: 1.3rem 0;
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+.card .btn{
+    padding: 1rem 2.5rem;
+    background-color: #ff9500;
+    border-radius: 4rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: all 0.3s;
+}
+.card .btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+}
+.card .btn:focus{
+    transform: translateY(0);
+    box-shadow: none;
+}
+.social{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    color: blue;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+.social i{
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 850px){
+	.card{
+    width: 32rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 3rem;
+    box-shadow: 1rem 1rem 3rem rgba(0,0,0,0.3) ;
+}
+}

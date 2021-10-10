@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Pro_DeliveryModelStoreContainer" CdmEntityContainer="Pro_DeliveryEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Admin_Email" ColumnName="Admin_Email" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="Branch_Address" ColumnName="Branch_Address" />
+          <ScalarProperty Name="Branch_Phone" ColumnName="Branch_Phone" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Request_Id" ColumnName="Request_Id" />
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Sender_Id" ColumnName="Sender_Id" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consignments">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Consignment">
+        <MappingFragment StoreEntitySet="Consignment">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Req_Status" ColumnName="Req_Status" />
+          <ScalarProperty Name="Shipper_Name" ColumnName="Shipper_Name" />
+          <ScalarProperty Name="Shipper_Phone" ColumnName="Shipper_Phone" />
+          <ScalarProperty Name="Total_Weight" ColumnName="Total_Weight" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="No_Of_Items" ColumnName="No_Of_Items" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="Branch_Address" ColumnName="Branch_Address" />
+          <ScalarProperty Name="Rec_Name" ColumnName="Rec_Name" />
+          <ScalarProperty Name="Rec_Address" ColumnName="Rec_Address" />
+          <ScalarProperty Name="Branch_Id" ColumnName="Branch_Id" />
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dealerships">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Dealership">
+        <MappingFragment StoreEntitySet="Dealership">
+          <ScalarProperty Name="Dealership_Id" ColumnName="Dealership_Id" />
+          <ScalarProperty Name="Sender_Name" ColumnName="Sender_Name" />
+          <ScalarProperty Name="Branch_Address" ColumnName="Branch_Address" />
+          <ScalarProperty Name="Date_Of_Apply" ColumnName="Date_Of_Apply" />
+          <ScalarProperty Name="Money_Deposited" ColumnName="Money_Deposited" />
+          <ScalarProperty Name="Sender_Id" ColumnName="Sender_Id" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dispatchers">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Dispatcher">
+        <MappingFragment StoreEntitySet="Dispatcher">
+          <ScalarProperty Name="Dispatcher_Id" ColumnName="Dispatcher_Id" />
+          <ScalarProperty Name="Rec_Name" ColumnName="Rec_Name" />
+          <ScalarProperty Name="Sender_Name" ColumnName="Sender_Name" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Sender_Id" ColumnName="Sender_Id" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receivers">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Receiver">
+        <MappingFragment StoreEntitySet="Receiver">
+          <ScalarProperty Name="Confirm_Rec_Password" ColumnName="Confirm_Rec_Password" />
+          <ScalarProperty Name="Rec_Id" ColumnName="Rec_Id" />
+          <ScalarProperty Name="Rec_Email" ColumnName="Rec_Email" />
+          <ScalarProperty Name="Rec_Password" ColumnName="Rec_Password" />
+          <ScalarProperty Name="Rec_Phone" ColumnName="Rec_Phone" />
+          <ScalarProperty Name="Rec_Name" ColumnName="Rec_Name" />
+          <ScalarProperty Name="Rec_Address" ColumnName="Rec_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Senders">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Sender">
+        <MappingFragment StoreEntitySet="Sender">
+          <ScalarProperty Name="Confirm_Sender_Password" ColumnName="Confirm_Sender_Password" />
+          <ScalarProperty Name="Sender_Id" ColumnName="Sender_Id" />
+          <ScalarProperty Name="Sender_Email" ColumnName="Sender_Email" />
+          <ScalarProperty Name="Sender_Password" ColumnName="Sender_Password" />
+          <ScalarProperty Name="Sender_Phone" ColumnName="Sender_Phone" />
+          <ScalarProperty Name="Sender_Name" ColumnName="Sender_Name" />
+          <ScalarProperty Name="Sender_Address" ColumnName="Sender_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamPages">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.TeamPage">
+        <MappingFragment StoreEntitySet="TeamPage">
+          <ScalarProperty Name="gmail" ColumnName="gmail" />
+          <ScalarProperty Name="fb" ColumnName="fb" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="Profession" ColumnName="Profession" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aboutus1">
+      <EntityTypeMapping TypeName="Pro_DeliveryModel.Aboutus">
+        <MappingFragment StoreEntitySet="Aboutus">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

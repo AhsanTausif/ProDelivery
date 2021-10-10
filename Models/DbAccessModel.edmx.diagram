@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84dfa7f0bf7e41de97e5f949282b2f3e" Name="Diagram1">
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Admin" Width="1.5" PointX="1" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Branch" Width="1.5" PointX="3.375" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Consignment" Width="1.5" PointX="7.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Dealership" Width="1.5" PointX="5.625" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Dispatcher" Width="1.5" PointX="1" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Receiver" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Sender" Width="1.5" PointX="7" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Branch__Admin_Id__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Dealershi__Admin__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Dispatche__Admin__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Branch__Rec_Id__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Branch__Sender_I__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Consignme__Branc__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Consignme__Rec_I__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Dealershi__Sende__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Dispatche__Rec_I__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="Pro_DeliveryModel.FK__Dispatche__Sende__38996AB5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Contact" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.TeamPage" Width="1.5" PointX="3.375" PointY="8.5" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.sysdiagram" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Pro_DeliveryModel.Aboutus" Width="1.5" PointX="9.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

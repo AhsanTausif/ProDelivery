@@ -1,0 +1,133 @@
+﻿@model IEnumerable<ProDelivery.Models.Branch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
+    <!-- Style -->
+    <link href="~/Content/css/table.css" rel="stylesheet" />
+    <link href="~/Content/css/table2.css" rel="stylesheet" />
+
+    <title>Pro Delivery - Branches </title>
+</head>
+<body>
+    <div style="display:flex">
+        <h2 class="mb-5" style="text-align: center;width:95%;">Pro Delivery - Branches</h2>
+
+        <a class="btn btn-outline-danger" style="color: aliceblue; padding-left: 10px" href="~/admins/adminProfile" role="button">Go Back</a>
+    </div>
+
+    @if (Session["admin_email"] == null && Request.Cookies["user"] == null)
+    {
+    <div>
+        <div>
+            <div>
+                <h3 style="color: aqua">Please Log In First</h3>
+            </div>
+            <a href="~/admins/login" style="color: aqua">Login</a>
+        </div>
+
+    </div>
+
+    }
+
+    else
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <div class="content">
+
+        <div class="container">
+
+            <div class="table-responsive">
+
+                <table class="table table-striped custom-table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col"> @Html.DisplayNameFor(model => model.Branch_Name)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Branch_Address)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Branch_Phone)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Pincode)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Request_Id)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Admin.Admin_Email)</th>
+                            <th scope="col"> @Html.DisplayNameFor(model => model.Receiver.Rec_Email)</th>
+                            <th scope="col"> @Html.DisplayNameFor(model => model.Sender.Sender_Email)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr scope="row">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Branch_Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Branch_Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Branch_Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Pincode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Request_Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Admin.Admin_Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Receiver.Rec_Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sender.Sender_Email)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Branch_Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Branch_Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Branch_Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+    }
+
+    <script src="~/Scripts/extrajs/bootstrap.min.js"></script>
+    <script src="~/Scripts/extrajs/popper.min.js"></script>
+    <script src="~/Scripts/extrajs/main.js"></script>
+    <script src="~/Scripts/extrajs/jquery-3.3.1.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+

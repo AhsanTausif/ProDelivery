@@ -1,0 +1,66 @@
+﻿@model ProDelivery.Models.Dealership
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dealership</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Apply)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Apply)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Money_Deposited)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Money_Deposited)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.Admin_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.Admin_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender.Sender_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender.Sender_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Dealership_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

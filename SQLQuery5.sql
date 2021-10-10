@@ -1,0 +1,4 @@
+﻿INSERT INTO [dbo].[TeamPage]([Id],[Image],[Name],[Profession],[Roll],[Section],[Group],[NickName],[fb],[gmail])
+VALUES(1,'~/Content/images/tausif.jpg','Samin Ahsan Tausif','Software Engineer','18.01.04.053','B','B1','Tausif','https://www.facebook.com/samin.tausif','180104053@aust.edu'),
+(2,'~/Content/images/nishat.jpg','Rownok Jahan Nishat','Software Engineer','18.01.04.062','B','B1','Nishat','https://www.facebook.com/rownokjahan.nishat','180104062@aust.edu'),
+(3,'~/Content/images/ayon.jpg','Md.Nafisuzzaman Ayon','Software Engineer','18.01.04.065','B','B1','Ayon','https://www.facebook.com/nafisuzzaman.ayon','180104065@aust.edu')

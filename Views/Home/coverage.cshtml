@@ -1,0 +1,159 @@
+﻿@model IEnumerable<ProDelivery.Models.Branch>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Delivery</title>
+    <link href="@Url.Content("~/lib/font-awesome/css/all.css")" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+
+    <link href="~/Content/css/test1.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <img src="~/Content/images/logo-1.1.png" style="height: 50px; width: 145px" />
+            <a href="#" class="nav__logo">Pro Delivery</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="~/home/index" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="~/home/coverage" class="nav__link">Coverage Map</a></li>
+                    <li class="nav__item"><a href="~/home/about" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="~/teamPages/index" class="nav__link">Team</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Offers</a></li>
+                    <li class="nav__item"><a href="~/contacts/create" class="nav__link">Contact us</a></li>
+                    @if ((Session["sec_user_email"] == null || Session["rec_user_email"] == null) && Request.Cookies["user"] == null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Log In<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="~/receivers/login">Log In as a Receiver</a></li>
+                                <li><a href="~/senders/login">Log In as a Sender</a></li>
+                                <li class="divider"></li>
+                                <li><a href="~/admins/login">Log In as an Admin</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Sign Up<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="~/receivers/signUp">Sign Up as a Receiver</a></li>
+                                <li><a href="~/senders/signUp">Sign Up as a Sender</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav__item"><a href="~/senders/userProfile" class="nav__link">User Profile</a></li>
+                        <li class="nav__item"><a href="" class="nav-link">@Html.ActionLink("Log Out", "SignOut", "Senders")</a></li>
+                    }
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home__container bd-container bd-grid">
+            <div class="home__data">
+                <h1 class="home__title"><u>Coverage Map</u></h1>
+                <h2 class="home__subtitle">
+                    <ul style="list-style-type:circle;">
+                        @foreach (var item in Model)
+                        {
+                            <li>@Html.DisplayFor(modelItem => item.Branch_Name)</li>
+                            <hr>
+                        }
+                    </ul>
+                </h2>
+            </div>
+
+            <img src="https://ecourier.com.bd/wp-content/uploads/map-01-1.svg"
+                 alt="" class="home__img">
+
+        </div>
+    </section>
+    <h3 style="text-align:center;">
+        <a href="~/senders/Services" class="button"><h2>Book Now</h2></a>
+    </h3>
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Pro Delivery</a>
+                <span class="footer__description">Online Courier Service</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Payments</a></li>
+                    <li><a href="#" class="footer__link">Reserve your delivery request</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="~/teamPages/index" class="footer__link">Our Team</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Address</h3>
+                <ul>
+                    <li>2/2, Nobodoy Housing, Mohammadpur</li>
+                    <li>Dhaka, Bangladesh</li>
+                    <li>01744697742</li>
+                    <li>ProDelivery@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 Pro Delivery. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+
+    <script src="~/Scripts/testing.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

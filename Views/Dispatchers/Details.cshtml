@@ -1,0 +1,74 @@
+﻿@model ProDelivery.Models.Dispatcher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dispatcher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Rec_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rec_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.Admin_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.Admin_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Receiver.Rec_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receiver.Rec_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender.Sender_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender.Sender_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Dispatcher_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,114 @@
+﻿@model ProDelivery.Models.Consignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipper_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipper_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Of_Items)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Of_Items)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rec_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rec_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rec_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rec_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch.Branch_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch.Branch_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Receiver.Rec_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receiver.Rec_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Shipper_Phone }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

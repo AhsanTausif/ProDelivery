@@ -1,0 +1,58 @@
+﻿@model ProDelivery.Models.Sender
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sender</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Sender_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ProDelivery.Models.Admin>
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrap">
+            <div class="sidebar">
+                <div class="logo-details">
+                    <a href="~/admins/check" class="logo">
+                        <img src="~/Content/images/logo-1.1.png" style="width: 225px; height: 100px" alt="" class="logo">
+                    </a>
+
+                    @if (Session["admin_email"] == null)
+                    {
+                        <div class="profile">
+                            <div class="profile-details">
+                                <div class="name_job">
+                                    <div class="name">Please Log In</div>
+                                    <div class="job">To Continue Further</div>
+                                </div>
+                                <a href="~/admins/login">Login</a>
+                            </div>
+                            
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="profile">
+                            <div class="profile-details">
+                                <div class="name_job">
+                                    <div class="name">@Session["admin_name"]</div>
+                                    <div class="job">@Session["admin_email"]</div>
+                                </div>
+                            </div>
+                            <a href=""><i class='bx bx-log-out' id="log_out"></i></a>
+                        </div>
+                        <ul class="nav-list">
+                            <li>
+                                <i class='bx bx-search'></i>
+                                <input type="text" placeholder="Search...">
+                                <span class="tooltip">Search</span>
+                            </li>
+
+                            <li>
+                                <a href="~/admins/adminProfile">
+                                    <i class='bx bx-grid-alt'></i>
+                                    <span class="links_name">Admin Profile</span>
+                                </a>
+                                <span class="tooltip">Dashboard</span>
+                            </li>
+                            <li>
+                                <a href="~/receivers/login">
+                                    <i class='bx bx-git-branch'></i>
+                                    <span class="links_name">Branch</span>
+                                </a>
+                                <span class="tooltip">Branch</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class='bx bx-pie-chart-alt-2'></i>
+                                    <span class="links_name">Requests</span>
+                                </a>
+                                <span class="tooltip">Requests</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class='bx bx-cart-alt'></i>
+                                    <span class="links_name">Delivery</span>
+                                </a>
+                                <span class="tooltip">Delivery</span>
+                            </li>
+                            <li>
+                                <a href="~/consignments/index">
+                                    <i class='bx bx-folder'></i>
+                                    <span class="links_name">Consignment</span>
+                                </a>
+                                <span class="tooltip">Consignment</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class='bx bx-cog'></i>
+                                    <span class="links_name">Settings</span>
+                                </a>
+                                <span class="tooltip">Settings</span>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+    </script>
+
+
+</body>
+</html>

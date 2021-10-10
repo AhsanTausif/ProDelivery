@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Pro_DeliveryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Admin_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Admin_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Admin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK__Branch__Admin_Id__30F848ED" FromRole="Admins" ToRole="Branch" />
+    <NavigationProperty Name="Dealerships" Relationship="Self.FK__Dealershi__Admin__34C8D9D1" FromRole="Admins" ToRole="Dealership" />
+    <NavigationProperty Name="Dispatchers" Relationship="Self.FK__Dispatche__Admin__398D8EEE" FromRole="Admins" ToRole="Dispatcher" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="Branch_Id" />
+    </Key>
+    <Property Name="Branch_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Branch_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Request_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK__Branch__Admin_Id__30F848ED" FromRole="Branch" ToRole="Admins" />
+    <NavigationProperty Name="Receiver" Relationship="Self.FK__Branch__Rec_Id__2F10007B" FromRole="Branch" ToRole="Receiver" />
+    <NavigationProperty Name="Sender" Relationship="Self.FK__Branch__Sender_I__300424B4" FromRole="Branch" ToRole="Sender" />
+    <NavigationProperty Name="Consignments" Relationship="Self.FK__Consignme__Branc__3C69FB99" FromRole="Branch" ToRole="Consignment" />
+  </EntityType>
+  <EntityType Name="Consignment">
+    <Key>
+      <PropertyRef Name="Shipper_Phone" />
+    </Key>
+    <Property Name="Shipper_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shipper_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Total_Weight" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Category" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="No_Of_Items" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rec_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rec_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Id" Type="Int32" Nullable="false" />
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK__Consignme__Branc__3C69FB99" FromRole="Consignment" ToRole="Branch" />
+    <NavigationProperty Name="Receiver" Relationship="Self.FK__Consignme__Rec_I__3D5E1FD2" FromRole="Consignment" ToRole="Receiver" />
+    <Property Name="Req_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Dealership">
+    <Key>
+      <PropertyRef Name="Dealership_Id" />
+    </Key>
+    <Property Name="Dealership_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sender_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Of_Apply" Type="DateTime" Precision="0" />
+    <Property Name="Money_Deposited" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK__Dealershi__Admin__34C8D9D1" FromRole="Dealership" ToRole="Admins" />
+    <NavigationProperty Name="Sender" Relationship="Self.FK__Dealershi__Sende__33D4B598" FromRole="Dealership" ToRole="Sender" />
+  </EntityType>
+  <EntityType Name="Dispatcher">
+    <Key>
+      <PropertyRef Name="Dispatcher_Id" />
+    </Key>
+    <Property Name="Dispatcher_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rec_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sender_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK__Dispatche__Admin__398D8EEE" FromRole="Dispatcher" ToRole="Admins" />
+    <NavigationProperty Name="Receiver" Relationship="Self.FK__Dispatche__Rec_I__37A5467C" FromRole="Dispatcher" ToRole="Receiver" />
+    <NavigationProperty Name="Sender" Relationship="Self.FK__Dispatche__Sende__38996AB5" FromRole="Dispatcher" ToRole="Sender" />
+  </EntityType>
+  <EntityType Name="Receiver">
+    <Key>
+      <PropertyRef Name="Rec_Id" />
+    </Key>
+    <Property Name="Rec_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rec_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rec_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rec_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rec_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rec_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK__Branch__Rec_Id__2F10007B" FromRole="Receiver" ToRole="Branch" />
+    <NavigationProperty Name="Consignments" Relationship="Self.FK__Consignme__Rec_I__3D5E1FD2" FromRole="Receiver" ToRole="Consignment" />
+    <NavigationProperty Name="Dispatchers" Relationship="Self.FK__Dispatche__Rec_I__37A5467C" FromRole="Receiver" ToRole="Dispatcher" />
+    <Property Name="Confirm_Rec_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sender">
+    <Key>
+      <PropertyRef Name="Sender_Id" />
+    </Key>
+    <Property Name="Sender_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sender_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sender_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sender_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sender_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sender_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK__Branch__Sender_I__300424B4" FromRole="Sender" ToRole="Branch" />
+    <NavigationProperty Name="Dealerships" Relationship="Self.FK__Dealershi__Sende__33D4B598" FromRole="Sender" ToRole="Dealership" />
+    <NavigationProperty Name="Dispatchers" Relationship="Self.FK__Dispatche__Sende__38996AB5" FromRole="Sender" ToRole="Dispatcher" />
+    <Property Name="Confirm_Sender_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Branch__Admin_Id__30F848ED">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admins">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dealershi__Admin__34C8D9D1">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+    <End Role="Dealership" Type="Self.Dealership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admins">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="Dealership">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dispatche__Admin__398D8EEE">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+    <End Role="Dispatcher" Type="Self.Dispatcher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admins">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="Dispatcher">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Branch__Rec_Id__2F10007B">
+    <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receiver">
+        <PropertyRef Name="Rec_Id" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Rec_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Branch__Sender_I__300424B4">
+    <End Role="Sender" Type="Self.Sender" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sender">
+        <PropertyRef Name="Sender_Id" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Sender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consignme__Branc__3C69FB99">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Consignment" Type="Self.Consignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="Branch_Id" />
+      </Principal>
+      <Dependent Role="Consignment">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consignme__Rec_I__3D5E1FD2">
+    <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+    <End Role="Consignment" Type="Self.Consignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receiver">
+        <PropertyRef Name="Rec_Id" />
+      </Principal>
+      <Dependent Role="Consignment">
+        <PropertyRef Name="Rec_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dealershi__Sende__33D4B598">
+    <End Role="Sender" Type="Self.Sender" Multiplicity="1" />
+    <End Role="Dealership" Type="Self.Dealership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sender">
+        <PropertyRef Name="Sender_Id" />
+      </Principal>
+      <Dependent Role="Dealership">
+        <PropertyRef Name="Sender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dispatche__Rec_I__37A5467C">
+    <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+    <End Role="Dispatcher" Type="Self.Dispatcher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receiver">
+        <PropertyRef Name="Rec_Id" />
+      </Principal>
+      <Dependent Role="Dispatcher">
+        <PropertyRef Name="Rec_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dispatche__Sende__38996AB5">
+    <End Role="Sender" Type="Self.Sender" Multiplicity="1" />
+    <End Role="Dispatcher" Type="Self.Dispatcher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sender">
+        <PropertyRef Name="Sender_Id" />
+      </Principal>
+      <Dependent Role="Dispatcher">
+        <PropertyRef Name="Sender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pro_DeliveryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="Consignments" EntityType="Self.Consignment" />
+    <EntitySet Name="Dealerships" EntityType="Self.Dealership" />
+    <EntitySet Name="Dispatchers" EntityType="Self.Dispatcher" />
+    <EntitySet Name="Receivers" EntityType="Self.Receiver" />
+    <EntitySet Name="Senders" EntityType="Self.Sender" />
+    <AssociationSet Name="FK__Branch__Admin_Id__30F848ED" Association="Self.FK__Branch__Admin_Id__30F848ED">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dealershi__Admin__34C8D9D1" Association="Self.FK__Dealershi__Admin__34C8D9D1">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="Dealership" EntitySet="Dealerships" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dispatche__Admin__398D8EEE" Association="Self.FK__Dispatche__Admin__398D8EEE">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="Dispatcher" EntitySet="Dispatchers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Branch__Rec_Id__2F10007B" Association="Self.FK__Branch__Rec_Id__2F10007B">
+      <End Role="Receiver" EntitySet="Receivers" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Branch__Sender_I__300424B4" Association="Self.FK__Branch__Sender_I__300424B4">
+      <End Role="Sender" EntitySet="Senders" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consignme__Branc__3C69FB99" Association="Self.FK__Consignme__Branc__3C69FB99">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Consignment" EntitySet="Consignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consignme__Rec_I__3D5E1FD2" Association="Self.FK__Consignme__Rec_I__3D5E1FD2">
+      <End Role="Receiver" EntitySet="Receivers" />
+      <End Role="Consignment" EntitySet="Consignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dealershi__Sende__33D4B598" Association="Self.FK__Dealershi__Sende__33D4B598">
+      <End Role="Sender" EntitySet="Senders" />
+      <End Role="Dealership" EntitySet="Dealerships" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dispatche__Rec_I__37A5467C" Association="Self.FK__Dispatche__Rec_I__37A5467C">
+      <End Role="Receiver" EntitySet="Receivers" />
+      <End Role="Dispatcher" EntitySet="Dispatchers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dispatche__Sende__38996AB5" Association="Self.FK__Dispatche__Sende__38996AB5">
+      <End Role="Sender" EntitySet="Senders" />
+      <End Role="Dispatcher" EntitySet="Dispatchers" />
+    </AssociationSet>
+    <EntitySet Name="Contacts" EntityType="Pro_DeliveryModel.Contact" />
+    <EntitySet Name="TeamPages" EntityType="Pro_DeliveryModel.TeamPage" />
+    <EntitySet Name="sysdiagrams" EntityType="Pro_DeliveryModel.sysdiagram" />
+    <EntitySet Name="Aboutus1" EntityType="Pro_DeliveryModel.Aboutus" />
+  </EntityContainer>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TeamPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Profession" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Roll" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Section" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Group" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fb" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="gmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Aboutus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

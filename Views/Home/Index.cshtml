@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Pro Delivery</title>
+    <link href="@Url.Content("~/lib/font-awesome/css/all.css")" rel="stylesheet" />
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+
+    <link href="~/Content/css/test1.css" rel="stylesheet" />
+
+    <title>Pro Delivery</title>
+</head>
+<body>
+
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <img src="~/Content/images/logo-1.1.png" style="height: 50px; width: 145px"/>
+            <a href="#" class="nav__logo">Pro Delivery</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="~/home/index" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="~/home/coverage" class="nav__link">Coverage Map</a></li>
+                    <li class="nav__item"><a href="~/home/about" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="~/teamPages/index" class="nav__link">Team</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Offers</a></li>
+                    <li class="nav__item"><a href="~/contacts/create" class="nav__link">Contact us</a></li>
+                    @if ((Session["sec_user_email"] == null || Session["rec_user_email"] == null) && Request.Cookies["user"] == null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Log In<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="~/receivers/login">Log In as a Receiver</a></li>
+                                <li><a href="~/senders/login">Log In as a Sender</a></li>
+                                <li class="divider"></li>
+                                <li><a href="~/admins/login">Log In as an Admin</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Sign Up<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="~/receivers/signUp">Sign Up as a Receiver</a></li>
+                                <li><a href="~/senders/signUp">Sign Up as a Sender</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav__item"><a href="~/senders/userProfile" class="nav__link">User Profile</a></li>
+                        <li class="nav__item"><a href="" class="nav-link">@Html.ActionLink("Log Out", "SignOut", "Senders")</a></li>
+                    }
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Pro Delivery</h1>
+                    <h2 class="home__subtitle">Others deliver boxes <br> We deliver dreams.</h2>
+                    <a href="#" class="button">Explore our services</a>
+                </div>
+
+                <img src="https://supplychaindigital.com/sites/default/files/styles/8_3_crop/public/image/FedEx%20Delivery%20Van%20with%20Berkshire%20Grey%20Package%20Sortation%20System%20Foreground2.png.webp?itok=bzHM7APY"
+                     alt="" class="home__img">
+            </div>
+        </section>
+
+       
+        <!--========== SERVICES ==========-->
+        <section class="services section bd-container" id="services">
+            <span class="section-subtitle">Offering</span>
+            <h2 class="section-title">Our amazing services</h2>
+
+            <div class="services__container  bd-grid">
+                <div class="services__content">
+                    <a href="~/senders/p2p" class="btn">
+                        <img src="~/Content/images/aboutus1.jpg"
+                             alt="" class="about__img" />
+                        <h3 class="services__title" style="padding-top:30px">Person to Person Delivery</h3>
+                    </a>
+                    <p class="services__description">With our presence across the nation, we bring your essentials at the speed of light, making your life hassle-free. We are there to bring respite to an anxious wife waiting at the door or a mother waiting for a sweet surprise. Don’t worry, for we are here to deliver the memories of a lifetime.</p>
+                </div>
+
+                <div class="services__content">
+                    <a href="~/senders/Air" class="btn">
+                        <img src="~/Content/images/aboutus2.jpeg"
+                             alt="" class="about__img" />
+                        <h3 class="services__title" style="padding-top:30px">Air Parcel</h3>
+                    </a>
+                    <p class="services__description">If you want to instant delivery and can't wait for long then air parcel is a best option.</p>
+                </div>
+
+                <div class="services__content">
+                    <a href="~/senders/corporate" class="btn">
+                        <img src="~/Content/images/aboutus3.jpg"
+                             alt="" class="about__img" />
+                        <h3 class="services__title" style="padding-top:30px">Corporate Delivery</h3>
+                    </a>
+                    <p class="services__description">From providing a hassle-free end-to-end delivery to making sure we accelerate your company’s efficiency, we help your business a great deal with each delivery. Our delivery solutions can be customised for big and small corporations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--========== MENU ==========-->
+        <section class="menu section bd-container" id="menu">
+            <span class="section-subtitle">Special</span>
+            <h2 class="section-title">Offers of the week</h2>
+
+            <div class="menu__container bd-grid">
+                <div class="menu__content">
+                    <img src="~/Content/images/menu1.jpg" alt="" class="menu__img">
+                    <h3 class="menu__name">September Offer</h3>
+                    <span class="menu__detail">Get 20% Discount</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>
+
+                <div class="menu__content">
+                    <img src="https://www.investopedia.com/thmb/vBbers5e_lUgpWvTAoC3tw16p0k=/1319x989/smart/filters:no_upscale()/GettyImages-98527327-41c5051f33ce4d5e892ebf6cc37e022d.jpg" alt="UPS vs. FedEx: What&amp;#39;s the Difference?"/>
+                    <h3 class="menu__name">Special Offer for Air Delivery</h3>
+                    <span class="menu__detail">Get 15% Discount</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>
+
+                <div class="menu__content">
+                    <img src="https://www.franklinparcel.com/wp-content/uploads/2017/01/Cash-On-Delivery-1024x682.jpg" alt="" class="menu__img">
+                    <h3 class="menu__name">Cash on Delivery</h3>
+                    <span class="menu__detail">Pay only after receiving the package</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!--===== APP =======-->
+        <section class="app section bd-container">
+            <div class="app__container bd-grid">
+                <div class="app__data">
+                    <span class="section-subtitle app__initial">App</span>
+                    <h2 class="section-title app__initial">App is available</h2>
+                    <p class="app__description">Find our application and download it, you can make reservations, parcel orders, see your deliveries on the way and much more.</p>
+                    <div class="app__stores">
+                        <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
+                        <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                    </div>
+                </div>
+
+                <img src="https://cdn.dribbble.com/users/238938/screenshots/4343419/f1.gif" alt="" class="app__img">
+            </div>
+        </section>
+
+        <!--========== CONTACT US ==========-->
+        <section class="contact section bd-container" id="contact">
+            <div class="contact__container bd-grid">
+                <div class="contact__data">
+                    <span class="section-subtitle contact__initial">Have any Queries?</span>
+                    <h2 class="section-title contact__initial">Contact us</h2>
+                    <p class="contact__description">If you have any queries regarding deliveries or our services, Kindly contact us any time.</p>
+                </div>
+
+                <div class="contact__button">
+                    <a href="~/contacts/create" class="button">Contact Us Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Pro Delivery</a>
+                <span class="footer__description">Online Courier Service</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Payments</a></li>
+                    <li><a href="#" class="footer__link">Reserve your delivery request</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="~/teamPages/index" class="footer__link">Our Team</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Address</h3>
+                <ul>
+                    <li>2/2, Nobodoy Housing, Mohammadpur</li>
+                    <li>Dhaka, Bangladesh</li>
+                    <li>01744697742</li>
+                    <li>ProDelivery@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 Pro Delivery. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+
+    <script src="~/Scripts/testing.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

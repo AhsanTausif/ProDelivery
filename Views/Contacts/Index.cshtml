@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ProDelivery.Models.Contact>
+
+@{
+    ViewBag.Title = "User Queries";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
+    <!-- Style -->
+    <link href="~/Content/css/table.css" rel="stylesheet" />
+    <link href="~/Content/css/table2.css" rel="stylesheet" />
+
+    <title>Pro Delivery - Consignments </title>
+</head>
+<body>
+
+    <h2 class="mb-5" style="text-align: center">User Queries</h2>
+
+    <a class="btn btn-outline-danger" style="color: aliceblue; padding-left: 10px" href="~/admins/adminProfile" role="button">Go Back</a>
+
+    <div class="content">
+
+        <div class="container">
+
+            <div class="table-responsive">
+
+                <table class="table table-striped custom-table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">@Html.DisplayNameFor(model => model.Email)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Phone)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Address)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Message)</th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr scope="row">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Message)
+                                </td>                      
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="~/Scripts/extrajs/bootstrap.min.js"></script>
+    <script src="~/Scripts/extrajs/popper.min.js"></script>
+    <script src="~/Scripts/extrajs/main.js"></script>
+    <script src="~/Scripts/extrajs/jquery-3.3.1.min.js"></script>
+</body>
+</html>

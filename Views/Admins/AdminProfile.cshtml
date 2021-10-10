@@ -1,0 +1,113 @@
+﻿@model ProDelivery.Models.Admin
+
+@{
+    ViewBag.Title = "AdminProfile";
+}
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrap">
+            <div class="sidebar">
+                <div class="logo-details">
+                    <a href="~/admins/check" class="logo">
+                        <img src="~/Content/images/logo-1.1.png" style="width: 225px; height: 100px" alt="" class="logo">
+                    </a>
+                </div>
+                    @if (Session["admin_email"] == null && Request.Cookies["user"] == null)
+                    {
+                        <div class="profile">
+                            <div class="profile-details">
+                                <div class="name_job">
+                                    <div class="name">Please Log In</div>
+                                    <div class="job">To Continue Further</div>
+                                </div>
+                                <a href="~/admins/login">Login</a>
+                            </div>
+
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="profile">
+                            <div class="profile-details">
+                                <div class="name_job">
+                                    <div class="name">@Html.DisplayFor(model => model.Admin_Name)</div>
+                                    <div class="job">@Html.DisplayFor(model => model.Admin_Email)</div>
+                                </div>
+                                <li class="nav__item" style="margin-left: 10px"><a href="" class="nav-link">@Html.ActionLink("Log Out", "SignOut", "Admins")</a></li>
+                            </div>          
+                        </div>
+                        <ul class="nav-list">
+                            <li>
+                                <i class='bx bx-search'></i>
+                                <input type="text" placeholder="Search...">
+                                <span class="tooltip">Search</span>
+                            </li>
+
+                            <li>
+                                <a href="~/admins/adminProfile">
+                                    <i class='bx bx-grid-alt'></i>
+                                    <span class="links_name">Admin Profile</span>
+                                </a>
+                                <span class="tooltip">Dashboard</span>
+                            </li>
+                            <li>
+                                <a href="~/branches/index">
+                                    <i class='bx bx-git-branch'></i>
+                                    <span class="links_name">Branch</span>
+                                </a>
+                                <span class="tooltip">Branch</span>
+                            </li>
+                            <li>
+                                <a href="~/dealerships/index">
+                                    <i class='bx bx-pie-chart-alt-2'></i>
+                                    <span class="links_name">Requests</span>
+                                </a>
+                                <span class="tooltip">Requests</span>
+                            </li>
+                            <li>
+                                <a href="~/dispatchers/index">
+                                    <i class='bx bx-cart-alt'></i>
+                                    <span class="links_name">Delivery</span>
+                                </a>
+                                <span class="tooltip">Delivery</span>
+                            </li>
+                            <li>
+                                <a href="~/consignments/index">
+                                    <i class='bx bx-folder'></i>
+                                    <span class="links_name">Consignment</span>
+                                </a>
+                                <span class="tooltip">Consignment</span>
+                            </li>
+                            <li>
+                                <a href="~/contacts/index">
+                                    <i class='bx bx-message-alt-detail'></i>
+                                    <span class="links_name">User Queries</span>
+                                </a>
+                                <span class="tooltip">User Queries</span>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    <script>
+    </script>
+
+
+</body>
+</html>

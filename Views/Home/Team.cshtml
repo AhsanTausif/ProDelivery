@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Team";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Pro Delivery</title>
+    <link href="@Url.Content("~/lib/font-awesome/css/all.css")" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== CSS ==========-->
+
+    <link href="~/Content/css/test1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/aboutus.css">
+
+</head>
+<body>
+
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <img src="~/Content/images/logo-1.1.png" style="height: 50px; width: 145px" />
+            <a href="#" class="nav__logo">Pro Delivery</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="~/home/index" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="~/home/team" class="nav__link active-link">Team</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Log In<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="~/receivers/login">Log In as a Receiver</a></li>
+                            <li><a href="~/senders/login">Log In as a Sender</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/admins/login">Log In as an Admin</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:greenyellow; margin-left: 10px;" role="button" aria-expanded="false">Sign Up<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="~/receivers/signUp">Sign Up as a Receiver</a></li>
+                            <li><a href="~/senders/signUp">Sign Up as a Sender</a></li>
+                        </ul>
+                    </li>
+
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="aboutusbanner">
+        <div class="container">
+            <h1 class="aboutustitle head1">About</h1>
+            <h1 class="aboutustitle head2">Team</h1>
+        </div>
+    </section>
+    <!--Main Title Ends-->
+
+    <div class="aboutusSection" id="#top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="aboutusHeaders" style="text-align:center; padding-top: 100px; color:cornflowerblue;">Samin Ahsan Tausif</h1>
+                    <p class="aboutusTexts" style="text-align: center; padding-top: 100px;">ID : 180104053</p>
+                </div>
+                <div class="col-md-6 animate-right">
+                    <img src="~/Content/images/tausif.jpg" style="margin-left: 30px; animation: spin 0.5s forwards;width:300px;height:300px;" class="aboutusGridimages" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 animate-left">
+                    <img src="~/Content/images/180104062.jpg" style=" width: 90%; margin-left: 80px; animation: scale 0.5s backwards; width: 300px; height: 300px;" class="aboutusGridimages" />
+                </div>
+                <div class="col-md-6">
+                    <h1 class="aboutusHeaders" style="text-align: center; padding-top: 100px; color: cornflowerblue;">Rownok Jahan Nishat</h1>
+                    <p class="aboutusTexts" style="text-align:center; padding-top: 100px;">ID : 180104062</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="aboutusHeaders" style="text-align: center; padding-top: 100px; color: cornflowerblue;">Md. Nafisuzzaman Ayon</h1>
+                    <p class="aboutusTexts" style="text-align:center; padding-top: 100px;">ID : 180104065</p>
+                </div>
+                <div class="col-md-6 animate-right">
+                    <img src="~/Content/images/180104065.jpg" style="margin-left: 30px; animation: spin 0.5s forwards; width: 300px; height: 300px;" class="aboutusGridimages" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container" style="background-color:aliceblue;font-size:16px;">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo" style="font-size: 20px;">Pro Delivery</a>
+                <span class="footer__description" style="color: black; font-size: 16px;">Online Courier Service</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h1 class="footer__title" style="font-size: 20px;">Services</h1>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Payments</a></li>
+                    <li><a href="#" class="footer__link">Reserve your delivery request</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h1 class="footer__title" style="font-size: 20px;">Information</h1>
+                <ul>
+                    <li><a href="#" class="footer__link">Our Team</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h1 class="footer__title" style="font-size: 20px;">Address</h1>
+                <ul style="color:black;">
+                    <li>2/2, Nobodoy Housing, Mohammadpur</li>
+                    <li>Dhaka, Bangladesh</li>
+                    <li>01744697742</li>
+                    <li>ProDelivery@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 Pro Delivery. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+
+    <script src="~/Scripts/testing.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

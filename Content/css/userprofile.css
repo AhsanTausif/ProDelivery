@@ -1,0 +1,139 @@
+﻿section {
+    background: url('http://d279m997dpfwgl.cloudfront.net/wp/2020/01/GettyImages-1191516033-1000x648.jpg') no-repeat center;
+    background-size: cover;
+}
+.bg {
+    background: url('https://www.freepik.com/free-vector/delivery-service-with-masks-concept_7509757.htm#&position=4') no-repeat center;
+    background-size: cover;
+}
+
+.header-user-profile {
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    margin-right: -4px;
+    margin-bottom: 6rem;
+    text-align: center;
+    color: orangered;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+}
+
+    .header-user-profile::after {
+        content: "";
+        width: 14rem;
+        height: 1rem;
+        background-color: greenyellow;
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2rem;
+    }
+
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 32rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.3);
+}
+
+    .card .card-img {
+        width: 100%;
+        height: 28rem;
+        object-fit: cover;
+        border-radius: 50%;
+        clip-path: polygon(0% 15%, 10% 13%, 15% 0%, 85% 0%, 88% 11%, 100% 15%, 100% 85%, 90% 88%, 85% 100%, 15% 100%, 12% 89%, 0% 85%);
+    }
+
+.profile {
+    width: 22rem;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -3rem;
+    z-index: 999;
+    border: 0.2rem solid #333;
+}
+
+.card h1 {
+    font-size: 2.5rem;
+    color: #ff9500;
+    margin: 1.5rem 0;
+}
+
+.profession {
+    color: blue;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+    font-style: italic;
+}
+
+.about {
+    font-size: 1.6rem;
+    margin: 1.3rem 0;
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+
+.card .btn {
+    padding: 1rem 2.5rem;
+    background-color: firebrick;
+    border-radius: 4rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: all 0.3s;
+}
+
+    .card .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+    }
+
+    .card .btn:focus {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+.social {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    color: firebrick;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+
+    .social i {
+        font-size: 3rem;
+    }
+
+@media screen and (max-width: 850px) {
+    .card {
+        width: 32rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 3rem;
+        box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.3);
+    }
+}
